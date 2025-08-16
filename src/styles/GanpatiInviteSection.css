@@ -1,0 +1,171 @@
+.ganpati-invite-section {
+    background: linear-gradient(to bottom, #0a0a0a, #1c1c1c);
+    color: #fefefe;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Shrikhand', cursive;
+  }
+  
+  .ganpati-invite-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #f7e684;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  }
+  
+  .image-container {
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto 20px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    width: 100%;
+    filter: blur(15px);
+    transition: filter 0.6s ease;
+    border-radius: 16px;
+  }
+  
+  .image-container.revealed img {
+    filter: blur(0);
+  }
+  
+  .reveal-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    color: #1a1a1a;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .reveal-btn:hover {
+    background: #ffc107;
+  }
+  
+  .after-reveal-text {
+    margin-top: 12px;
+    color: #ffeb3b;
+    animation: fadeIn 1s ease-in;
+    font-weight: bold;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
+  }
+  
+  .invite-text {
+    font-size: 1.1rem;
+    margin: 25px 0;
+    line-height: 1.6;
+  }
+  
+  .countdown-wrapper {
+    margin: 20px 0;
+    font-size: 1.3rem;
+    color: #fff176;
+  }
+  
+  .rsvp-btn {
+    background: #ff4081;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 40px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 0 12px rgba(255, 64, 129, 0.4);
+  }
+  
+  .rsvp-btn:hover {
+    background: #f50057;
+  }
+  .secret-img img {
+    width: 100%;
+    max-width: 300px;
+    filter: blur(18px);
+    border-radius: 16px;
+    margin-bottom: 10px;
+    pointer-events: none;
+  }
+  
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .popup-content {
+    background: #1c1c1c;
+    color: #fff8dc;
+    padding: 30px 25px;
+    border-radius: 16px;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    animation: scaleIn 0.4s ease-out;
+  }
+  
+  .popup-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #ffd700;
+  }
+  
+  .popup-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  
+  .close-btn {
+    padding: 10px 20px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .close-btn:hover {
+    background-color: #f50057;
+  }
+  
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      background: rgba(10, 10, 10, 0);
+    }
+    to {
+      background: rgba(10, 10, 10, 0.8);
+    }
+  }
+  
