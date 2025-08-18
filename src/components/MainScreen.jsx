@@ -114,7 +114,7 @@ const MainScreen = ({ userName, language }) => {
                 <p>{t.sections[0].desc}</p>
                 <div className="photo-gallery">
                     {Array.from({ length: 8 }, (_, i) => (
-                        <img key={i} src={require(`../assets/${i + 1}.jpg`)} alt={`Ganpati ${i + 1}`} />
+                        <img key={i} src={require(`../assets/${i + 1}.webp`)} alt={`Ganpati ${i + 1}`} />
                     ))}
                 </div>
             </section>
