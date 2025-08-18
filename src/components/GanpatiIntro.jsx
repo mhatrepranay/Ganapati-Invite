@@ -1,10 +1,11 @@
-import { useRef, } from 'react';
+import { useRef, useState, } from 'react';
 import '../styles/GanpatiIntro.css';
 import introVideo from '../assets/intro.mp4';
 
 const GanpatiIntro = ({ onComplete }) => {
     const playCountRef = useRef(1); // Starts at 1st play
     const videoRef = useRef(null);
+    const [isReady, setIsReady] = useState(false);
 
     const handleVideoEnd = () => {
         if (playCountRef.current < 2) {
@@ -17,6 +18,7 @@ const GanpatiIntro = ({ onComplete }) => {
 
     return (
         <div className="intro-container">
+
             <video
                 ref={videoRef}
                 src={introVideo}
@@ -24,8 +26,16 @@ const GanpatiIntro = ({ onComplete }) => {
                 autoPlay
                 playsInline
                 muted
+                preload="auto"
+                onCanPlay={() => setIsReady(true)} // ✅ Fires when video is buffered
                 onEnded={handleVideoEnd}
             />
+
+            {!isReady && (
+                <div className="loading-screen">
+                    <h1 className="om-symbol">ॐ</h1>
+                </div>
+            )}
         </div>
     );
 };
