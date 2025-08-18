@@ -1,15 +1,62 @@
 .footer {
-    background-color: #1a1a1a;
-    color: #d4af37;
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 0.95rem;
-    font-family: 'Inter', sans-serif;
-    border-top: 1px solid #2a2a2a;
-  }
-  
-  .footer strong {
-    color: #ffd700;
-    font-weight: 600;
-  }
-  
+  position: relative;
+  background-color: #1a1a1a;
+  color: #d4af37;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  border-top: 1px solid #2a2a2a;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden; /* so shapes don’t overflow */
+}
+
+/* Gradient blobs / shapes in background */
+.footer::before,
+.footer::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+/* left gradient blob */
+.footer::before {
+  top: -50px;
+  left: -50px;
+  background: radial-gradient(circle, #ff8c00, transparent 70%);
+}
+
+/* right gradient blob */
+.footer::after {
+  bottom: -50px;
+  right: -50px;
+  background: radial-gradient(circle, #00bfff, transparent 70%);
+}
+
+.footer p,
+.footer img {
+  position: relative;
+  z-index: 1; /* make sure text and image are above shapes */
+}
+
+.footer strong {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.footer p {
+  padding-right: 30px;
+}
+
+.footer img {
+  width: 80px;
+  height: 80px;
+  /* padding-right: 30px; */
+  border-radius: 10%;
+}

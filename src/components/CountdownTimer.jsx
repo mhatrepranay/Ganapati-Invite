@@ -29,7 +29,7 @@ const CountdownTimer = ({ date }) => {
     return (
         <div className="countdown-container">
             {Object.keys(timeLeft).length === 0 ? (
-                <p className="final-msg">🎉 Ganpati Bappa Has Arrived! 🎉</p>
+                <p className="final-msg">🌸 Gauri Mata Has Arrived! 🌸</p>
             ) : (
                 <div className="countdown-box">
                     {Object.entries(timeLeft).map(([unit, value]) => (
