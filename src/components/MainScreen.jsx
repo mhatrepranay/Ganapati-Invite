@@ -190,10 +190,6 @@ const MainScreen = ({ userName, language }) => {
             <br /><br /><br />
             <Schedule language={language} />
             <br /><br /><br />
-            <GanpatiInviteSection userName={userName} language={language} />
-            <br /><br />
-            {/* 5. Invitation Poster Section */}
-            {/* Invitation Poster Section */}
             <section className="section" data-aos="fade-up">
                 <h3>{language === "marathi" ? "आमंत्रण पत्रिका ✨" : "Invitation Card ✨"}</h3>
                 <p>
@@ -206,8 +202,8 @@ const MainScreen = ({ userName, language }) => {
                     <img
                         src={
                             language === "marathi"
-                                ? require("../assets/Invitaion-2025-Marathi.png")
-                                : require("../assets/Invitaion-2025-English.png")
+                                ? require("../assets/Invitaion-2025-Marathi (1).png")
+                                : require("../assets/Invitaion-2025-English (1).png")
                         }
                         alt={language === "marathi" ? "Marathi Invitation" : "English Invitation"}
                         className="invite-img"
@@ -217,6 +213,11 @@ const MainScreen = ({ userName, language }) => {
                     />
                 </div>
             </section>
+            <GanpatiInviteSection userName={userName} language={language} />
+            <br /><br />
+            {/* 5. Invitation Poster Section */}
+            {/* Invitation Poster Section */}
+
 
 
         </div >
