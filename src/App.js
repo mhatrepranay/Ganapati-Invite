@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import NameInput from './components/NameInput';
 import MainScreen from './components/MainScreen';
 import LanguageSelection from './components/LanguageSelection'; // NEW
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Footer from './components/Footer';
 
