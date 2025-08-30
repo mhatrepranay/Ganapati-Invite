@@ -12,7 +12,7 @@ const MainScreen = ({ userName, language }) => {
     const normalizedName = userName?.toLowerCase() || "";
 
     // Define different groups of keywordsac
-    const specialKeywords = ["gawali", "gavali", "raj", "pravin", "sir", "gwali"];
+    const specialKeywords = ["gawali", "gavali", "raj", "pravin", "sir", "gwali", "dear"];
     const broKeywords = ["sallu", "soham"];
     const sisKeywords = ["pranali", "priyanka", "didi", "pinka"];
 
