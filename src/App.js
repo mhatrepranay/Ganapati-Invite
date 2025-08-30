@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import GanpatiIntro from './components/GanpatiIntro';
+import { useState, useEffect } from 'react';
 import NameInput from './components/NameInput';
 import MainScreen from './components/MainScreen';
 import LanguageSelection from './components/LanguageSelection'; // NEW
@@ -13,10 +12,7 @@ function App() {
   const [userName, setUserName] = useState('');
   const [language, setLanguage] = useState('');
 
-  const handleIntroComplete = () => setStage('name');
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
+
 
   const handleNameSubmit = (name) => {
     setUserName(name);
