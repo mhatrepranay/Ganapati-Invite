@@ -10,7 +10,7 @@ body {
 .main-screen {
   padding: 20px;
   background: radial-gradient(rgba(0, 0, 0, 0.5), #121212),
-                url('../assets/2.jpg')   center ;  min-height: 100vh;
+                url('../assets/2.png')   center ;  min-height: 100vh;
   text-align: center;
 }
 
@@ -85,4 +85,38 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(250, 250, 250, 0.05);
   outline: none;
+}
+
+
+
+.invite-gallery {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.invite-img {
+  width: 90%;
+  max-width: 480px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(-100px); /* start above */
+  animation: dropDown 1s ease-out forwards;
+}
+
+/* Keyframes for drop-down animation */
+@keyframes dropDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(20px); /* small bounce effect */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

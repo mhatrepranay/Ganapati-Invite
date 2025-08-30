@@ -10,10 +10,22 @@ const MainScreen = ({ userName, language }) => {
     const audioRef = useRef(null);
 
     const normalizedName = userName?.toLowerCase() || "";
-    const specialKeywords = ["gawali", "gavali", "raj", "pravain", "sir", "gwali"];
+
+    // Define different groups of keywordsac
+    const specialKeywords = ["gawali", "gavali", "raj", "pravin", "sir", "gwali"];
+    const broKeywords = ["sallu", "soham"];
+    const sisKeywords = ["pranali", "priyanka", "didi", "pinka"];
+
+    // Check which group the user belongs to
     const isSpecialUser = specialKeywords.some(keyword => normalizedName.includes(keyword));
+    const isBro = broKeywords.some(keyword => normalizedName.includes(keyword));
+    const isSis = sisKeywords.some(keyword => normalizedName.includes(keyword));
+
+
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+
         AOS.init({ duration: 1200 });
 
         // Create background audio
@@ -77,7 +89,11 @@ const MainScreen = ({ userName, language }) => {
         marathi: {
             welcome: isSpecialUser
                 ? "With gratitude in my heart, I welcome the one who has always been an inspiration in my life — Dear Gawali Sir ✨"
-                : `🙏 हार्दिक स्वागत आहे, ${userName}!`,
+                : isBro
+                    ? `🙏 स्वागत आहे Bhamajiiii!`
+                    : isSis
+                        ? `🙏 स्वागत आहे Didiiii !`
+                        : `🙏 हार्दिक स्वागत आहे, ${userName}!`,
             wish: '🌼 गणेश चतुर्थीच्या पावन अवसरानिमित्त तुमचं आणि तुमच्या कुटुंबाचं मनःपूर्वक अभिनंदन! 🌸',
             sections: [
                 { title: 'गौरी मातेचे सुंदर क्षण ✨', desc: 'मागील वर्षीच्या गौरी मातेच्या सुंदर आणि आठवणीपूर्ण क्षणांची काही झलक तुमच्यासाठी.' },
@@ -89,7 +105,11 @@ const MainScreen = ({ userName, language }) => {
         english: {
             welcome: isSpecialUser
                 ? "With gratitude in my heart, I welcome the one who has always been an inspiration in my life — Dear Gawali Sir ✨"
-                : `🙏 Welcome ${userName}`,
+                : isBro
+                    ? `🙏 Welcome Bhamajiiiii !`
+                    : isSis
+                        ? `🙏 Welcome Didiii !`
+                        : `🙏 Welcome ${userName}`,
             wish: '🎉 Wishing you and your family a joyful Ganesh Chaturthi celebration!',
             sections: [
                 { title: 'Gauri Mata Memories ✨', desc: 'Take a look at last year’s beautiful Gauri Mata celebrations!' },
@@ -114,7 +134,7 @@ const MainScreen = ({ userName, language }) => {
                 <p>{t.sections[0].desc}</p>
                 <div className="photo-gallery">
                     {Array.from({ length: 8 }, (_, i) => (
-                        <img key={i} src={require(`../assets/${i + 1}.webp`)} alt={`Ganpati ${i + 1}`} />
+                        <img key={i} src={require(`../assets/${i + 1}.png`)} alt={`Ganpati ${i + 1}`} />
                     ))}
                 </div>
             </section>
@@ -171,7 +191,35 @@ const MainScreen = ({ userName, language }) => {
             <Schedule language={language} />
             <br /><br /><br />
             <GanpatiInviteSection userName={userName} language={language} />
-        </div>
+            <br /><br />
+            {/* 5. Invitation Poster Section */}
+            {/* Invitation Poster Section */}
+            <section className="section" data-aos="fade-up">
+                <h3>{language === "marathi" ? "आमंत्रण पत्रिका ✨" : "Invitation Card ✨"}</h3>
+                <p>
+                    {language === "marathi"
+                        ? "ही आहे आमच्या गौरी मातेच्या आगमनाची आमंत्रण पत्रिका."
+                        : "Here’s our special invitation card for Gauri Mata’s arrival."}
+                </p>
+
+                <div className="invite-gallery">
+                    <img
+                        src={
+                            language === "marathi"
+                                ? require("../assets/Invitaion-2025-Marathi.png")
+                                : require("../assets/Invitaion-2025-English.png")
+                        }
+                        alt={language === "marathi" ? "Marathi Invitation" : "English Invitation"}
+                        className="invite-img"
+                        data-aos="fade-down"       // 👈 animation type
+                        data-aos-duration="1200"   // 👈 speed
+                        data-aos-easing="ease-out" // 👈 smooth
+                    />
+                </div>
+            </section>
+
+
+        </div >
     );
 };
 

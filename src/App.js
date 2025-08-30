@@ -56,8 +56,8 @@ function App() {
 
   return (
     <>
-      {stage === 'intro' && <GanpatiIntro onComplete={handleIntroComplete} />}
-      {stage === 'name' && <NameInput onNameSubmit={handleNameSubmit} />}
+      {/* {stage === 'intro'  && <GanpatiIntro onComplete={handleIntroComplete} />} */}
+      {stage === 'intro' && <NameInput onNameSubmit={handleNameSubmit} />}
       {stage === 'language' && <LanguageSelection onSelect={handleLanguageSelect} />}
       {stage === 'main' && <MainScreen userName={userName} language={language} />}
       <Footer />

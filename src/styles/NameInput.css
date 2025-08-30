@@ -2,7 +2,7 @@
 
 .name-input-container {
   background: radial-gradient(rgba(0, 0, 0, 0.5), #121212),
-            url('../assets/2.jpg') no-repeat center center/cover;
+            url('../assets/2.png') no-repeat center center/cover;
 
   color: #f5f5f5;
   min-height: 100vh;
